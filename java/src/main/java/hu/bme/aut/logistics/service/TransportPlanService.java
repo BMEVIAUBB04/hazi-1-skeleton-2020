@@ -13,15 +13,6 @@ import hu.bme.aut.logistics.repository.TransportPlanRepository;
 @Service
 public class TransportPlanService {
 
-    @Autowired
-    TransportPlanRepository transportPlanRepository;
-    
-    @Autowired
-    MilestoneRepository milestoneRepository;
-    
-    @Autowired
-    SectionRepository sectionRepository;
-    
     //TODO: Megvalósítani az 5. a. feladat szerint
     public List<Milestone> getFirstAndLastMilestone(Long transportPlanId){
     	return null;
