@@ -1,6 +1,8 @@
 name: Hazi 1 Java
 
-on: push
+on:
+  pull_request:
+    types: [opened, synchronize]
 
 jobs:
   build:
@@ -11,6 +13,9 @@ jobs:
         uses: actions/checkout@v1
         with:
           fetch-depth: 1
+
+      - name: Check neptun.txt
+        uses: akosdudas/ahk-action-neptuncheck@master
 
       - name: Prepare JDK 11
         uses: actions/setup-java@v1
@@ -26,4 +31,3 @@ jobs:
           SPRING_MAIN_BANNER_MODE: off
           SPRING_JPA_SHOW_SQL: false
           LOGGING_LEVEL_ROOT: WARN
-        if: github.event.before != '0000000000000000000000000000000000000000'
