@@ -18,9 +18,9 @@ public class TransportPlanServiceGetFirstAndLastMilestoneIT extends TransportPla
 
     @BeforeEach
     void clearDB() {
-    	sectionRepository.deleteAll();
-    	milestoneRepository.deleteAll();
-    	transportPlanRepository.deleteAll();
+    	sectionRepository.deleteAllInBatch();
+    	milestoneRepository.deleteAllInBatch();
+    	transportPlanRepository.deleteAllInBatch();
     }
     
     @Test
